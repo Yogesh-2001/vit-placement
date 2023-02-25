@@ -10,6 +10,7 @@ import nodemailer from "nodemailer";
 import hbs from "nodemailer-express-handlebars";
 import path from "path";
 import forumRoutes from "./routes/forumRoute.js";
+import { fileURLToPath } from "url";
 //configure env
 dotenv.config();
 
@@ -18,11 +19,12 @@ const app = express();
 
 //middelwares
 
-app.use(express.static(path.join(__dirname, "./client/build")));
+// const __dirname = path.dirname(fileURLToPath(import.meta.url));
+// app.use(express.static(path.join(__dirname, "./client/build")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 
 app.use(cors());
 app.use(express.json({ limit: "50mb" }));
