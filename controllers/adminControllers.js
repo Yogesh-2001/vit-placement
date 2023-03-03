@@ -2,6 +2,7 @@ import userModel from "../models/userModel.js";
 import noticeModel from "../models/noticeModel.js";
 import { comparePassword, hashPassword } from "./../helpers/authHelper.js";
 import placementModel from "../models/placementModel.js";
+// const placed = require("../models/placementModel.js").default
 import profileModel from "../models/profileModel.js";
 import allPlacementModel from "../models/allPlacementModel.js";
 import { transporter } from "../server.js";

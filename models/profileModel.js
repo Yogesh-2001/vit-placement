@@ -31,6 +31,7 @@ const profileSchema = new mongoose.Schema(
     phone: {
       type: Number,
       required: true,
+      match: /^(\+?\d{1,3}[- ]?)?\d{10}$/,
     },
     address: {
       type: String,
