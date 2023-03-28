@@ -17,13 +17,15 @@ dotenv.config();
 //rest object
 const app = express();
 
-//middelwares
+// //middelwares
+// const dirname = path.dirname(new URL(import.meta.url).pathname);
 
-app.use(express.static(path.join(__dirname, "./client/build")));
+// app.use(express.static(path.join(dirname, "./client/build")));
+// // app.use(express.static(path.join(__dirname, "./client/build")));
 
-app.use("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+// app.use("*", (req, res) => {
+//   res.sendFile(path.join(dirname, "./client/build/index.html"));
+// });
 
 app.use(cors());
 app.use(express.json({ limit: "50mb" }));

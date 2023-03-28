@@ -46,6 +46,7 @@ export const addStudents = async (req, res) => {
     //register user
     const hashedPassword = await hashPassword(password);
     //save
+    console.log(hashedPassword);
     const user = await new userModel({
       name,
       email,
